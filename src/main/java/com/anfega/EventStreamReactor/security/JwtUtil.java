@@ -16,7 +16,7 @@ public class JwtUtil {
     private final long expirationMillis;
 
     public JwtUtil(org.springframework.core.env.Environment env) {
-        String secret = env.getProperty("jwt.secret", "default-secret-please-change");
+        String secret = env.getProperty("jwt.secret", "defaultSecretKey");
         this.expirationMillis = Long.parseLong(env.getProperty("jwt.expiration-ms", "3600000")); // 1h default
         this.key = Keys.hmacShaKeyFor(secret.getBytes());
     }

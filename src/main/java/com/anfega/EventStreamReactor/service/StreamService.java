@@ -23,7 +23,10 @@ public class StreamService {
     }
 
     public Flux<String> streamChanges() {
-        return sink.asFlux();
+        return Flux.concat(
+                Flux.just("Conexión establecida"),
+                sink.asFlux()
+        );
     }
 
     public Flux<ServerSentEvent<String>> streamSimulatedChanges() {
