@@ -1,0 +1,15 @@
+spring:
+  data:
+    mongodb:
+      database: eventsdb
+      host: localhost
+      port: 27017
+  main:
+    web-application-type: reactive
+
+server:
+  port: 8080
+
+jwt:
+  secret: "Aa5592770*1234567890abcdef12345678"
+  expiration-ms: 3600000
